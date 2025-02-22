@@ -1,9 +1,29 @@
+<div class="grid">
+    <div class="col-4">
 
-<p-fileUpload 
-mode="basic" 
-chooseLabel="Choose" 
-chooseIcon="pi pi-upload"
-name="demo[]" 
-url="https://www.primefaces.org/cdn/api/upload.php" 
-accept="image/*" 
-(onUpload)="onUpload($event)" />
+    </div>
+    <div class="col-4">
+        <h3>Carga Masiva de cuentas</h3>
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+
+<br>
+<p-tabView>
+    <p-tabPanel header="Carga de archivo">
+        <p-fileUpload mode="basic" chooseLabel="Choose" chooseIcon="pi pi-upload" name="loadfile[]"
+            url="https://www.primefaces.org/cdn/api/upload.php" accept=".txt" (onUpload)="onUpload($event)" />
+
+    </p-tabPanel>
+    <p-tabPanel header="Monitoreo">
+
+    </p-tabPanel>
+    <ng-container>
+        <p-tabPanel header="Cuentas creadas">
+
+        </p-tabPanel>
+    </ng-container>
+
+</p-tabView>

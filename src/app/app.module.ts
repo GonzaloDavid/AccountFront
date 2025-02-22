@@ -8,6 +8,7 @@ import { TableModule } from 'primeng/table';
 import { BulkProcessComponent } from './components/bulk-process/bulk-process.component';
 import { LoadFileComponent } from './components/load-file/load-file.component';
 import { ResultLoadFileComponent } from './components/result-load-file/result-load-file.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ResultLoadFileComponent } from './components/result-load-file/result-lo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ButtonModule, TableModule
+    AppRoutingModule,ButtonModule, TableModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

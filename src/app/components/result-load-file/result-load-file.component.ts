@@ -7,7 +7,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LoadfileService } from 'src/app/services/loadfile.service';
+
 
 interface UploadEvent {
     originalEvent: Event;
@@ -20,13 +22,26 @@ interface UploadEvent {
   imports: [TableModule, ButtonModule, TabViewModule, CommonModule, InputTextModule, FileUploadModule, ToastModule, HttpClientModule],
   templateUrl: './result-load-file.component.html',
   styleUrls: ['./result-load-file.component.scss'],
-  providers: [MessageService]
+  providers: [MessageService, LoadfileService, HttpClient]
 })
 export class ResultLoadFileComponent {
 
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService,
+    private loadFileService:LoadfileService
+  ) {}
 
   onUpload(event: UploadEvent) {
+
+    this.loadFileService.updateLoadFile(event.files[0], 'file').subscribe({
+      next: (result) => {
+        console.log('Proceso OK:', result);
+      },
+      error: (error) => {
+        console.error('Error al subir el archivo:', error);
+      }
+    });
+    
+    console.log('Enviando archivo al servidor', event);
       this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
   }
 

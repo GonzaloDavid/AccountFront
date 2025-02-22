@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ResultLoadFileComponent } from './components/result-load-file/result-load-file.component';
 
-const routes: Routes = [];
+
+export const routes: Routes = [
+  { path : "account-load-file", component: ResultLoadFileComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

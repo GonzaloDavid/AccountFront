@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { ConfigService } from './services/config.service';
+
+export function getSettings(configService: ConfigService) {
+  return () => configService.configApiBaseUrl();
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bulk-account-manager';
+
+
 }

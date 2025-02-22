@@ -1,1 +1,12 @@
-<p>tracking-file works!</p>
+<p-table [value]="trackingList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 100%;">Error</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowdata>
+        <tr>
+            <td>{{ rowdata }}</td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -5,13 +5,13 @@ import { TableModule } from 'primeng/table';
   selector: 'app-account-list',
   templateUrl: './account-list.component.html',
   styleUrls: ['./account-list.component.scss'],
-    standalone: true,
-    imports: [TableModule],
+  standalone: true,
+  imports: [TableModule],
 })
 export class AccountListComponent {
 
-  @Input() accountList:any[]=[];
-  constructor(){
+  @Input() accountList: any[] = [];
+  constructor() {
 
   }
 

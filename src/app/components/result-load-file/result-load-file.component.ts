@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoadfileService } from 'src/app/services/loadfile.service';
 import { AccountListComponent } from '../account-list/account-list.component';
 import { ResponseLoadFile } from 'src/app/model/ResponseLoadFile';
+import { TrackingFileComponent } from '../tracking-file/tracking-file.component';
 
 
 interface UploadEvent {
@@ -21,7 +22,7 @@ interface UploadEvent {
 @Component({
   selector: 'app-result-load-file',
   standalone: true,
-  imports: [TableModule, ButtonModule, TabViewModule, CommonModule, InputTextModule, FileUploadModule, ToastModule, HttpClientModule, AccountListComponent],
+  imports: [TableModule, ButtonModule, TabViewModule, CommonModule, InputTextModule, FileUploadModule, ToastModule, HttpClientModule, AccountListComponent, TrackingFileComponent],
   templateUrl: './result-load-file.component.html',
   styleUrls: ['./result-load-file.component.scss'],
   providers: [MessageService, LoadfileService, HttpClient]

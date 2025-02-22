@@ -1,6 +1,6 @@
 export class ResultFile{
 
-    errorList:any[];
+    errorList:string[];
     sucessfulList:any[];
 
     constructor()

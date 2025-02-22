@@ -12,8 +12,7 @@ import { TrackingFileComponent } from './components/tracking-file/tracking-file.
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TrackingFileComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

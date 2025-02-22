@@ -1,3 +1,4 @@
+import { Loadfile } from "./Loadfile";
 import { ResultFile } from "./ResultFile";
 
 export class ResponseLoadFile
@@ -7,11 +8,13 @@ export class ResponseLoadFile
     pathFile:string;
     resultFile: ResultFile;
 
+
     constructor()
     {
         this.code="";
         this.message="";
         this.pathFile="";
         this.resultFile=new ResultFile();
+
     }
 }

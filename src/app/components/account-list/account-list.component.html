@@ -6,7 +6,7 @@
             <th style="width: 20%;">Apellido</th>
             <th style="width: 10%;">Edad</th>
             <th style="width: 15%;">Fecha</th>
-            <th style="width: 15%;">Fecha de creacion</th>
+            <th style="width: 15%;">Fecha de creación</th>
             <th style="width: 20%;">Correo</th>
         </tr>
     </ng-template>
@@ -19,6 +19,11 @@
             <td>{{ rowdata.dateTransaction }}</td>
             <td>{{ rowdata.dateTransaction }}</td>
             <td>{{ rowdata.email }}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="7" class="text-center">No existen datos</td>
         </tr>
     </ng-template>
 </p-table>

@@ -12,6 +12,7 @@ import { LoadfileService } from 'src/app/services/loadfile.service';
 import { AccountListComponent } from '../account-list/account-list.component';
 import { ResponseLoadFile } from 'src/app/model/ResponseLoadFile';
 import { TrackingFileComponent } from '../tracking-file/tracking-file.component';
+import { Loadfile } from 'src/app/model/Loadfile';
 
 
 interface UploadEvent {
@@ -30,19 +31,28 @@ interface UploadEvent {
 export class ResultLoadFileComponent {
 
   responseLoadFile:ResponseLoadFile;
+  isNew: boolean;
+  loadfileSaved:Loadfile;
+
 
   constructor(private messageService: MessageService,
     private loadFileService:LoadfileService
   ) {
     this.responseLoadFile=new ResponseLoadFile();
+    this.isNew=true;
+    this.loadfileSaved=new Loadfile();
   }
 
   onUpload(event: UploadEvent) {
 
-    this.loadFileService.updateLoadFile(event.files[0], 'file').subscribe({
+    const fileName = event.files[0].name;
+    console.log('[Nombre del archivo]: '+ fileName);
+    this.loadFileService.updateLoadFile(event.files[0], fileName).subscribe({
       next: (result) => {
         console.log('Proceso OK:', result);
         this.responseLoadFile= result;
+        this.loadfileSaved= this.responseLoadFile.resultFile.loadfileInserted;
+        this.isNew=false;
       },
       error: (error) => {
         console.error('Error al subir el archivo:', error);

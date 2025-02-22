@@ -1,12 +1,19 @@
 <p-table [value]="trackingList" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
-            <th style="width: 100%;">Error</th>
+            <th style="width: 10%;">Número de linea</th>
+            <th style="width: 90%;">Error</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowdata>
         <tr>
-            <td>{{ rowdata }}</td>
+            <td>{{ rowdata.rowNumber }}</td>
+            <td>{{ rowdata.rowValue }}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="2" class="text-center">No existen datos</td>
         </tr>
     </ng-template>
 </p-table>

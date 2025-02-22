@@ -13,8 +13,7 @@ import { ResultLoadFileComponent } from './components/result-load-file/result-lo
   declarations: [
     AppComponent,
     BulkProcessComponent,
-    LoadFileComponent,
-    ResultLoadFileComponent
+    LoadFileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadFileComponent } from './load-file.component';
+import { TrackingFileComponent } from './tracking-file.component';
 
-describe('LoadFileComponent', () => {
-  let component: LoadFileComponent;
-  let fixture: ComponentFixture<LoadFileComponent>;
+describe('TrackingFileComponent', () => {
+  let component: TrackingFileComponent;
+  let fixture: ComponentFixture<TrackingFileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoadFileComponent ]
+      declarations: [ TrackingFileComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LoadFileComponent);
+    fixture = TestBed.createComponent(TrackingFileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

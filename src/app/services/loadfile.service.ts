@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ConfigService } from './config.service';
 import { map, Observable } from 'rxjs';
+import { ResponseLoadFile } from '../model/ResponseLoadFile';
 
 const headers = new HttpHeaders()
   .set('Content-Type', 'application/json; charset=utf-8')
@@ -21,7 +22,7 @@ export class LoadfileService {
     this.uriBackend = this.urlService.getUrl() + '/account/resources/bulkAccount/';
   }
 
-  updateLoadFile(file: File, namefile: string): Observable<any> 
+  updateLoadFile(file: File, namefile: string): Observable<ResponseLoadFile> 
   {
     let url = `http://localhost:9080/account/resources/bulkAccount/uploadloadFile`;
     const formData = new FormData();

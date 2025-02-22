@@ -1,0 +1,24 @@
+<p-table [value]="accountList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 5%;">Codigo</th>
+            <th style="width: 20%;">Nombre</th>
+            <th style="width: 20%;">Apellido</th>
+            <th style="width: 10%;">Edad</th>
+            <th style="width: 15%;">Fecha</th>
+            <th style="width: 15%;">Fecha de creacion</th>
+            <th style="width: 20%;">Correo</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowdata>
+        <tr>
+            <td>{{ rowdata.codeAccount }}</td>
+            <td>{{ rowdata.name }}</td>
+            <td>{{ rowdata.lastName }}</td>
+            <td>{{ rowdata.age }}</td>
+            <td>{{ rowdata.dateTransaction }}</td>
+            <td>{{ rowdata.dateTransaction }}</td>
+            <td>{{ rowdata.email }}</td>
+        </tr>
+    </ng-template>
+</p-table>

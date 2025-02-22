@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BulkProcessComponent } from './bulk-process.component';
+import { AccountListComponent } from './account-list.component';
 
-describe('BulkProcessComponent', () => {
-  let component: BulkProcessComponent;
-  let fixture: ComponentFixture<BulkProcessComponent>;
+describe('AccountListComponent', () => {
+  let component: AccountListComponent;
+  let fixture: ComponentFixture<AccountListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BulkProcessComponent ]
+      declarations: [ AccountListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BulkProcessComponent);
+    fixture = TestBed.createComponent(AccountListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

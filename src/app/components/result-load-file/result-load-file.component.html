@@ -22,7 +22,7 @@
     </p-tabPanel>
     <ng-container>
         <p-tabPanel header="Cuentas creadas">
-
+            <app-account-list [accountList]="responseLoadFile.resultFile.sucessfulList"></app-account-list>
         </p-tabPanel>
     </ng-container>
 

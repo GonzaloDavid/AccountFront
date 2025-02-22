@@ -16,8 +16,8 @@
             <td>{{ rowdata.name }}</td>
             <td>{{ rowdata.lastName }}</td>
             <td>{{ rowdata.age }}</td>
-            <td>{{ rowdata.dateTransaction }}</td>
-            <td>{{ rowdata.dateTransaction }}</td>
+            <td>{{ rowdata.dateTransaction  | date :'yyyy-MM-dd'}}</td>
+            <td>{{ dateProcess  | date :'yyyy-MM-dd'}}</td>
             <td>{{ rowdata.email }}</td>
         </tr>
     </ng-template>

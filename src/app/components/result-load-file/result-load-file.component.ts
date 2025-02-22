@@ -50,17 +50,22 @@ export class ResultLoadFileComponent {
     this.loadFileService.updateLoadFile(event.files[0], fileName).subscribe({
       next: (result) => {
         console.log('Proceso OK:', result);
+        result.resultFile.sucessfulList.forEach(item=>{
+
+          console.log('[item.dateTransaction]: ', item.dateTransaction)
+          const fechaLimpia = item.dateTransaction.split("[")[0];
+          const fechaDate = new Date(fechaLimpia);
+          item.dateTransaction=new Date(fechaDate);
+        });
         this.responseLoadFile= result;
         this.loadfileSaved= this.responseLoadFile.resultFile.loadfileInserted;
+        this.loadfileSaved.dateCreate=new Date();
         this.isNew=false;
       },
       error: (error) => {
         console.error('Error al subir el archivo:', error);
       }
     });
-    
-    console.log('Enviando archivo al servidor', event);
-      this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
   }
 
 }

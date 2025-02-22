@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TableModule } from 'primeng/table';
 
@@ -6,13 +7,15 @@ import { TableModule } from 'primeng/table';
   templateUrl: './account-list.component.html',
   styleUrls: ['./account-list.component.scss'],
   standalone: true,
-  imports: [TableModule],
+  imports: [TableModule, CommonModule],
 })
 export class AccountListComponent {
 
+  dateProcess:Date;
   @Input() accountList: any[] = [];
   constructor() {
 
+    this.dateProcess=new Date();
   }
 
 }
